@@ -1,10 +1,10 @@
 {
-  "name": "generator-gcloud-fullstack",
+  "name": "generator-google-app-engine-fullstack",
   "version": "0.0.1",
-  "description": "A Yoman fuulstack for Google Cloud Platform with Flask, AngularJS and Compass",
+  "description": "A Yoman fullstack scaffold for Google App Engine with Python",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": "cwyark/generator-gcloud-fullstack",
+  "repository": "cwyark/generator-google-app-engine-fullstack",
   "author": {
     "name": "Chester Tseng",
     "email": "cwyark@gmail.com",

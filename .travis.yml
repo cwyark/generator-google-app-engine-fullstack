@@ -3,5 +3,5 @@ node_js:
   - '0.10'
 before_install:
   - currentfolder=${PWD##*/}
-  - if [ "$currentfolder" != 'generator-gcloud-fullstack' ]; then cd .. && eval "mv $currentfolder generator-gcloud-fullstack" && cd generator-gcloud-fullstack; fi
+  - if [ "$currentfolder" != 'generator-google-app-engine-fullstack' ]; then cd .. && eval "mv $currentfolder generator-google-app-engine-fullstack" && cd generator-google-app-engine-fullstack; fi
 

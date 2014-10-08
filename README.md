@@ -1,4 +1,4 @@
-# generator-gcloud-fullstack [![Build Status](https://secure.travis-ci.org/cwyark/generator-gcloud-fullstack.png?branch=master)](https://travis-ci.org/cwyark/generator-gcloud-fullstack)
+# generator-google-app-engine-fullstack [![Build Status](https://secure.travis-ci.org/cwyark/generator-google-app-engine-fullstack.png?branch=master)](https://travis-ci.org/cwyark/generator-google-app-engine-fullstack)
 
 > [Yeoman](http://yeoman.io) generator
 
@@ -23,16 +23,16 @@ npm install -g yo
 
 Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
 
-To install generator-gcloud-fullstack from npm, run:
+To install generator-google-app-engine-fullstack from npm, run:
 
 ```bash
-npm install -g generator-gcloud-fullstack
+npm install -g generator-google-app-engine-fullstack
 ```
 
 Finally, initiate the generator:
 
 ```bash
-yo gcloud-fullstack
+yo google-app-engine-fullstack
 ```
 
 ### Getting To Know Yeoman

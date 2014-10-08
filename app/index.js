@@ -14,7 +14,7 @@ var GcloudFullstackGenerator = yeoman.generators.Base.extend({
 
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the bedazzling GcloudFullstack generator!'
+      'Welcome to the GAE Fullstack generator!'
     ));
 
     var prompts = [{
