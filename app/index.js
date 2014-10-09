@@ -14,14 +14,14 @@ var GcloudFullstackGenerator = yeoman.generators.Base.extend({
 
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the GAE Fullstack generator!'
+      'Welcome to the GAE with Python Fullstack generator!'
     ));
 
     var prompts = [{
-      type: 'confirm',
-      name: 'someOption',
-      message: 'Would you like to enable this option?',
-      default: true
+		type: 'list',
+      	name: 'Python Framework',
+      	message: 'Which python framework do you want to use?',
+	  	choices:['Flask','Webapp2','Bottle'],
     }];
 
     this.prompt(prompts, function (props) {
