@@ -4,7 +4,7 @@ var path = require('path');
 var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
 
-var GcloudFullstackGenerator = yeoman.generators.Base.extend({
+var GAEFullstackGenerator = yeoman.generators.Base.extend({
   initializing: function () {
     this.pkg = require('../package.json');
   },
@@ -18,16 +18,35 @@ var GcloudFullstackGenerator = yeoman.generators.Base.extend({
     ));
 
     var prompts = [{
+		type: 'input',
+		name: 'app_id',
+		message: 'What is your Google App Engine Application ID?',
+		default: path.basename(process.cwd())
+	}, {
 		type: 'list',
       	name: 'Python Framework',
       	message: 'Which python framework do you want to use?',
 	  	choices:['Flask','Webapp2','Bottle'],
-    }];
+    }, {
+		type: 'input',
+		name: 'glcoud',
+		message: 'Where is your google cloud platform SDK path?',
+		default: '~/google-cloud-sdk/'
+	}, {
+		type: 'comfirm',
+		name: 'compass',
+		message: 'Do you want to use Compass?',
+		default: false
+	}, {
+		type: 'list',
+		name: 'ui_framework',
+		message: 'Which UI framework do you want to use?',
+		choices: ['bootstrap', 'Foundation', 'Semantic', 'None']
+	}];
 
     this.prompt(prompts, function (props) {
-      this.someOption = props.someOption;
-
-      done();
+		this.someOption = props.someOption;
+		done();
     }.bind(this));
   },
 
@@ -51,4 +70,4 @@ var GcloudFullstackGenerator = yeoman.generators.Base.extend({
   }
 });
 
-module.exports = GcloudFullstackGenerator;
+module.exports = GAEFullstackGenerator;
