@@ -45,7 +45,7 @@ var GAEFullstackGenerator = yeoman.generators.Base.extend({
 	}];
 
     this.prompt(prompts, function (props) {
-		this.someOption = props.someOption;
+		this.app_id = props.app_id;
 		done();
     }.bind(this));
   },
@@ -54,6 +54,7 @@ var GAEFullstackGenerator = yeoman.generators.Base.extend({
     app: function () {
       this.dest.mkdir('app');
       this.dest.mkdir('app/templates');
+	  this.template('_app.yaml', 'app.yaml');
 
       this.src.copy('_package.json', 'package.json');
       this.src.copy('_bower.json', 'bower.json');
