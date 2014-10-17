@@ -1,4 +1,4 @@
-application: <%= _.slugify(app_id) %>
+application: <%= app_id %>
 version: baseline
 runtime: python27
 threadsafe: yes
