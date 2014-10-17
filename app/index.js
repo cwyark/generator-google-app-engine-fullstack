@@ -5,9 +5,13 @@ var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
 
 var GAEFullstackGenerator = yeoman.generators.Base.extend({
+
   initializing: function () {
     this.pkg = require('../package.json');
+	this.filters = {};
   },
+	
+
 
   prompting: function () {
     var done = this.async();
@@ -24,9 +28,9 @@ var GAEFullstackGenerator = yeoman.generators.Base.extend({
 		default: path.basename(process.cwd())
 	}, {
 		type: 'list',
-      	name: 'Python Framework',
+      	name: 'PyFramework',
       	message: 'Which python framework do you want to use?',
-	  	choices:['Flask','Webapp2','Bottle'],
+	  	choices:['Flask','Webapp2','Bottle','None'],
     }, {
 		type: 'input',
 		name: 'glcoud',
@@ -34,18 +38,22 @@ var GAEFullstackGenerator = yeoman.generators.Base.extend({
 		default: '~/google-cloud-sdk/'
 	}, {
 		type: 'comfirm',
-		name: 'compass',
+		name: 'Compass',
 		message: 'Do you want to use Compass?',
 		default: false
 	}, {
 		type: 'list',
 		name: 'ui_framework',
 		message: 'Which UI framework do you want to use?',
-		choices: ['bootstrap', 'Foundation', 'Semantic', 'None']
+		choices: ['bootstrap', 'Foundation', 'Semantic', 'None'],
 	}];
 
     this.prompt(prompts, function (props) {
-		this.app_id = props.app_id;
+		this.app_id 		= props.app_id;
+		this.gcloud 		= props.gcloud;
+		this.filters['pyframework'] = props.PyFramework;
+		this.filters['uiframework'] = props.ui_framework;
+		this.compass   		= props.compass;
 		done();
     }.bind(this));
   },
@@ -53,8 +61,12 @@ var GAEFullstackGenerator = yeoman.generators.Base.extend({
   writing: {
     app: function () {
       this.dest.mkdir('app');
+      this.dest.mkdir('lib');
       this.dest.mkdir('app/templates');
 	  this.template('_app.yaml', 'app.yaml');
+
+	  /*pip's requirements config */
+	  this.template('_requirements.txt', 'requirements.txt');
 
       this.src.copy('_package.json', 'package.json');
       this.src.copy('_bower.json', 'bower.json');
