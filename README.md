@@ -1,32 +1,33 @@
-# generator-google-app-engine-fullstack [![Build Status](https://secure.travis-ci.org/cwyark/generator-google-app-engine-fullstack.png?branch=master)](https://travis-ci.org/cwyark/generator-google-app-engine-fullstack)
+# Generator-google-app-engine-fullstack
 
-> [Yeoman](http://yeoman.io) generator
+*version: v0.0.1*
 
+>It's a [Yeoman](http://yeoman.io) generator to help you to rapidly build a Google App Engine based on Python Lang. 
 
 ## Getting Started
 
-### What is Yeoman?
+### How to install Yeoman?
 
-Trick question. It's not a thing. It's this guy:
+First of all, please install [npm](https://npmjs.org), this tool is a Node Packaging tool. If you have installed NodeJS, there should have this tool in your PC.
 
-![](http://i.imgur.com/JHaAlBJ.png)
-
-Basically, he wears a top hat, lives in your computer, and waits for you to tell him what kind of application you wish to create.
-
-Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
+Then there only one step to install Yeoman.
 
 ```bash
 npm install -g yo
 ```
 
-### Yeoman Generators
+### How to install generator-google-app-engine-fullstack?
 
-Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
+Sorry, generator-google-app-engine-fullstack is under development. There are only few things that you can play with.
 
-To install generator-google-app-engine-fullstack from npm, run:
+Currently, the only way to install generator-google-app-engine-fullstack is from github, run:
 
 ```bash
-npm install -g generator-google-app-engine-fullstack
+git clone https://github.com/cwyark/generator-google-app-engine-fullstack.git 
+
+cd generator-google-app-engine-fullstack
+
+npm link
 ```
 
 Finally, initiate the generator:
@@ -34,13 +35,6 @@ Finally, initiate the generator:
 ```bash
 yo google-app-engine-fullstack
 ```
-
-### Getting To Know Yeoman
-
-Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
-
-If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
-
 
 ## License
 
