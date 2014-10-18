@@ -3,3 +3,4 @@ bottle==0.12.7 <% } %><% if(filters['pyframework']=='Flask') { %>
 Flask==0.10.1 <% } %><% if(filters['pyframework']=='Webapp2') { %>
 webapp2==2.5.2
 <% } %>
+Jinja2==2.7.3
