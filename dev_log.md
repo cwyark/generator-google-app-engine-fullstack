@@ -12,3 +12,4 @@ v0.0.1
 
 v0.0.2
 1. add Jinja2 in app.yaml 
+2. ask for virtualenv for this project
