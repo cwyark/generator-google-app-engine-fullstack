@@ -17,3 +17,5 @@ v0.0.2
 2. ask for virtualenv for this project
 
 3. combine google cloud sdk path with project
+
+4. run dev_appserver.py with grunt 
