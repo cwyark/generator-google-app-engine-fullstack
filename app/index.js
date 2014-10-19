@@ -20,9 +20,6 @@ var GAEFullstackGenerator = yeoman.generators.Base.extend({
 
   	python_prompts: function () {
     	var done = this.async();
-		this.log(yosay(
-		  'We are going to set up the python environment'
-		));
 		this.prompt([
 		{
 			type: 'input',
@@ -62,9 +59,6 @@ var GAEFullstackGenerator = yeoman.generators.Base.extend({
 
 	ui_prompts: function () {
     	var done = this.async();
-		this.log(yosay(
-		  'We are going to set up the ui environment'
-		));
 		this.prompt([
 		{
 			type: 'confirm',
