@@ -63,11 +63,10 @@ var GAEFullstackGenerator = yeoman.generators.Base.extend({
   writing: {
     app: function () {
       this.dest.mkdir('app');
-      this.dest.write('app/__init__.py','');
       this.dest.mkdir('lib');
 	  this.src.copy('appengine_config.py','appengine_config.py');
 	  this.src.copy('main.py','main.py');
-	  this.src.copy('pyweb/' + this.filters['pyframework'] + '_entry.py','app/entry.py');
+	  this.src.copy('pyweb/' + this.filters['pyframework'] + '_entry.py','app/__init__.py');
 	  this.template('_app.yaml', 'app.yaml');
 
 	  /*pip's requirements config */
