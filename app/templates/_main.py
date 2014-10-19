@@ -1,7 +1,8 @@
 import os
-import os.path
+import site
 import sys <% if(virtualenv) { %>
 if hasattr(sys, 'real_prefix'):
+    site.addsitedir(os.path.join(os.path.dirname(__file__), 'lib'))
     gae_pth = os.environ.get('VIRTUAL_ENV') + '/lib/python2.7/site-packages' + '/gae.pth'
     if not os.path.isfile(gae_pth):
         os.system('echo "<%= gcloud_path %>/platform/google_appengine" >> %s' % gae_pth);
