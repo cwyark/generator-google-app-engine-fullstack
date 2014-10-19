@@ -6,59 +6,69 @@ var yosay = require('yosay');
 
 var GAEFullstackGenerator = yeoman.generators.Base.extend({
 
-  initializing: function () {
-    this.pkg = require('../package.json');
-	this.filters = {};
-  },
+  	initializing: function () {
+    	this.pkg = require('../package.json');
+		this.filters = {};
+  	},
 	
+	info: function() {
+		// Have Yeoman greet the user.
+		this.log(yosay(
+		  'Welcome to the GAE with Python Fullstack generator!'
+		));
+	},
 
+  	python_prompts: function () {
+    	var done = this.async();
 
-  prompting: function () {
-    var done = this.async();
+		this.prompt([
+		{
+			type: 'input',
+			name: 'app_id',
+			message: 'What is your Google App Engine Application ID?',
+			default: path.basename(process.cwd())
+		}, {
+			type: 'list',
+			name: 'PyFramework',
+			message: 'Which python framework do you want to use?',
+			choices:['Flask','Webapp2','Bottle'],
+			filter: function( val ) { return val.toLowerCase(); }
+		}, {
+			type: 'input',
+			name: 'glcoud',
+			message: 'Where is your google cloud platform SDK path?',
+			default: '~/google-cloud-sdk/'
+		}], function (props) {
+			this.app_id 				= props.app_id;
+			this.gcloud 				= props.gcloud;
+			this.filters['pyframework'] = props.PyFramework;
+			this.filters['uiframework'] = props.ui_framework;
+			this.compass   				= props.compass;
+			done();
+		}.bind(this));
+  	},
 
-    // Have Yeoman greet the user.
-    this.log(yosay(
-      'Welcome to the GAE with Python Fullstack generator!'
-    ));
+	ui_prompts: function () {
+    	var done = this.async();
 
-    var prompts = [{
-		type: 'input',
-		name: 'app_id',
-		message: 'What is your Google App Engine Application ID?',
-		default: path.basename(process.cwd())
-	}, {
-		type: 'list',
-      	name: 'PyFramework',
-      	message: 'Which python framework do you want to use?',
-	  	choices:['Flask','Webapp2','Bottle'],
-        filter: function( val ) { return val.toLowerCase(); }
-    }, {
-		type: 'input',
-		name: 'glcoud',
-		message: 'Where is your google cloud platform SDK path?',
-		default: '~/google-cloud-sdk/'
-	}, {
-		type: 'comfirm',
-		name: 'Compass',
-		message: 'Do you want to use Compass?',
-		default: false
-	}, {
-		type: 'list',
-		name: 'ui_framework',
-		message: 'Which UI framework do you want to use?',
-		choices: ['bootstrap', 'Foundation', 'Semantic', 'None'],
-        filter: function( val ) { return val.toLowerCase(); }
-	}];
-
-    this.prompt(prompts, function (props) {
-		this.app_id 				= props.app_id;
-		this.gcloud 				= props.gcloud;
-		this.filters['pyframework'] = props.PyFramework;
-		this.filters['uiframework'] = props.ui_framework;
-		this.compass   				= props.compass;
-		done();
-    }.bind(this));
-  },
+		this.prompt([
+		{
+			type: 'comfirm',
+			name: 'Compass',
+			message: 'Do you want to use Compass?',
+			default: false
+		}, {
+			type: 'list',
+			name: 'ui_framework',
+			message: 'Which UI framework do you want to use?',
+			choices: ['bootstrap', 'Foundation', 'Semantic', 'None'],
+			filter: function( val ) { return val.toLowerCase(); }
+		}], function (props) {
+			this.filters['uiframework'] = props.ui_framework;
+			this.compass   				= props.compass;
+			done();
+		}.bind(this));
+  	},
 
   writing: {
     app: function () {
