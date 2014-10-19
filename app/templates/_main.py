@@ -14,6 +14,7 @@ if hasattr(sys, 'real_prefix'):
         if "No module named <%= filters['pyframework'] %>" in err:
             os.system('pip install -t lib -r requirements.txt')
         import app
+    os.system('dev_appserver.py .')
 else:
     print """
 You are not in a python virtual envionment
