@@ -3,6 +3,7 @@ var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
+var gruntfile = require('gruntfile-editor');
 
 var GAEFullstackGenerator = yeoman.generators.Base.extend({
 
@@ -87,11 +88,12 @@ var GAEFullstackGenerator = yeoman.generators.Base.extend({
 	  this.src.copy('pyweb/' + this.filters['pyframework'] + '_entry.py','app/__init__.py');
 	  this.template('_app.yaml', 'app.yaml');
 
-	  /*pip's requirements config */
+	  /* pip's requirements config */
 	  this.template('_requirements.txt', 'requirements.txt');
 
       this.src.copy('_package.json', 'package.json');
       this.src.copy('_bower.json', 'bower.json');
+
     },
 
     projectfiles: function () {
