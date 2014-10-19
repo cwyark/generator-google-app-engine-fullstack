@@ -1,6 +1,7 @@
 'use strict';
 var util = require('util');
 var path = require('path');
+var sys  = require('sys');
 var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
 var gruntfile = require('gruntfile-editor');
@@ -34,11 +35,6 @@ var GAEFullstackGenerator = yeoman.generators.Base.extend({
 			choices:['Flask','Webapp2','Bottle'],
 			filter: function( val ) { return val.toLowerCase(); }
 		}, {
-			type: 'input',
-			name: 'glcoud',
-			message: 'Where is your google cloud platform SDK path?',
-			default: '~/google-cloud-sdk/'
-		}, {
 			type: 'confirm',
 			name: 'virtualenv',
 			message: 'Do you want to use virtualenv with your development project?',
@@ -46,7 +42,7 @@ var GAEFullstackGenerator = yeoman.generators.Base.extend({
 		}, {
 			type: 'input',
 			name: 'virtualenv_name',
-			message: "What's your virtualenv name?(it will create one if it is not exist)",
+			message: "What's your virtualenv name?",
 			default: path.basename(process.cwd()),
 			when: function(props){ return props.virtualenv;}
 		}], function (props) {
