@@ -20,7 +20,9 @@ var GAEFullstackGenerator = yeoman.generators.Base.extend({
 
   	python_prompts: function () {
     	var done = this.async();
-
+		this.log(yosay(
+		  'We are going to set up the python environment'
+		));
 		this.prompt([
 		{
 			type: 'input',
@@ -38,22 +40,34 @@ var GAEFullstackGenerator = yeoman.generators.Base.extend({
 			name: 'glcoud',
 			message: 'Where is your google cloud platform SDK path?',
 			default: '~/google-cloud-sdk/'
+		}, {
+			type: 'confirm',
+			name: 'virtualenv',
+			message: 'Do you want to use virtualenv with your development project?',
+			default: true
+		}, {
+			type: 'input',
+			name: 'virtualenv_name',
+			message: "What's your virtualenv name?(it will create one if it is not exist)",
+			default: path.basename(process.cwd()),
+			when: function(props){ return props.virtualenv;}
 		}], function (props) {
 			this.app_id 				= props.app_id;
 			this.gcloud 				= props.gcloud;
 			this.filters['pyframework'] = props.PyFramework;
-			this.filters['uiframework'] = props.ui_framework;
-			this.compass   				= props.compass;
+			this.virtualenv_name 		= props.virtualenv_name;
 			done();
 		}.bind(this));
   	},
 
 	ui_prompts: function () {
     	var done = this.async();
-
+		this.log(yosay(
+		  'We are going to set up the ui environment'
+		));
 		this.prompt([
 		{
-			type: 'comfirm',
+			type: 'confirm',
 			name: 'Compass',
 			message: 'Do you want to use Compass?',
 			default: false
