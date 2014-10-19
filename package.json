@@ -1,6 +1,6 @@
 {
   "name": "generator-google-app-engine-fullstack",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Yeoman fullstack scaffold for Google App Engine with Python",
   "license": "MIT",
   "main": "app/index.js",

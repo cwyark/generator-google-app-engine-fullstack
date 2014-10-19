@@ -1,6 +1,6 @@
 # Generator-google-app-engine-fullstack
 
-*version: v0.0.1*
+*version: v0.0.2*
 
 >It's a [Yeoman](http://yeoman.io) generator to help you to rapidly build a Google App Engine based on Python Lang. 
 
@@ -35,6 +35,29 @@ Finally, initiate the generator:
 ```bash
 yo google-app-engine-fullstack
 ```
+
+To initialize the gae server...
+
+```bash
+grunt 
+```
+
+### How to run dev_appserver.py ?
+
+We don't directly use dev_appserver.py to run the GAE development server.
+
+As an alternative, we have wrap the dev_appserver.py and the Google Appe Engine path environments into "main.py"
+
+Further, "python main.py" is one of the registered task in Gruntfile.js
+
+You can only run ...
+
+```bash
+grunt
+```
+
+to execute the app server
+
 
 ## License
 
