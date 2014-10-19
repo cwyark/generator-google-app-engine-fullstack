@@ -11,5 +11,9 @@ v0.0.1
 4. ask for python framework choices, front end framework choices, compass, gcloud SDK path
 
 v0.0.2
+
 1. add Jinja2 in app.yaml 
+
 2. ask for virtualenv for this project
+
+3. combine google cloud sdk path with project
