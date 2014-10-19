@@ -30,7 +30,8 @@ var GAEFullstackGenerator = yeoman.generators.Base.extend({
 		type: 'list',
       	name: 'PyFramework',
       	message: 'Which python framework do you want to use?',
-	  	choices:['Flask','Webapp2','Bottle','None'],
+	  	choices:['Flask','Webapp2','Bottle'],
+        filter: function( val ) { return val.toLowerCase(); }
     }, {
 		type: 'input',
 		name: 'glcoud',
@@ -46,14 +47,15 @@ var GAEFullstackGenerator = yeoman.generators.Base.extend({
 		name: 'ui_framework',
 		message: 'Which UI framework do you want to use?',
 		choices: ['bootstrap', 'Foundation', 'Semantic', 'None'],
+        filter: function( val ) { return val.toLowerCase(); }
 	}];
 
     this.prompt(prompts, function (props) {
-		this.app_id 		= props.app_id;
-		this.gcloud 		= props.gcloud;
+		this.app_id 				= props.app_id;
+		this.gcloud 				= props.gcloud;
 		this.filters['pyframework'] = props.PyFramework;
 		this.filters['uiframework'] = props.ui_framework;
-		this.compass   		= props.compass;
+		this.compass   				= props.compass;
 		done();
     }.bind(this));
   },
@@ -61,10 +63,11 @@ var GAEFullstackGenerator = yeoman.generators.Base.extend({
   writing: {
     app: function () {
       this.dest.mkdir('app');
+      this.dest.write('app/__init__.py','');
       this.dest.mkdir('lib');
-      this.dest.mkdir('app/templates');
 	  this.src.copy('appengine_config.py','appengine_config.py');
 	  this.src.copy('main.py','main.py');
+	  this.src.copy('pyweb/' + this.filters['pyframework'] + '_entry.py','app/entry.py');
 	  this.template('_app.yaml', 'app.yaml');
 
 	  /*pip's requirements config */
