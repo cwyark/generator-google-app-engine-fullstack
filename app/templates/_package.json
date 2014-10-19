@@ -1,5 +1,5 @@
 {
-  "name": "package",
+  "name": "<%= app_id %>",
   "version": "0.0.0",
   "dependencies": {}
 }

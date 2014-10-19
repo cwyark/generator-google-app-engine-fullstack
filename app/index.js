@@ -91,8 +91,8 @@ var GAEFullstackGenerator = yeoman.generators.Base.extend({
 	  /* pip's requirements config */
 	  this.template('_requirements.txt', 'requirements.txt');
 
-      this.src.copy('_package.json', 'package.json');
-      this.src.copy('_bower.json', 'bower.json');
+      this.template('_package.json', 'package.json');
+      this.template('_bower.json', 'bower.json');
 
     },
 
