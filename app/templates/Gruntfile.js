@@ -5,7 +5,7 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 		shell: {
 			pythonServer: {
-				command: 'python main.py'
+				command: 'python2 main.py'
 			}
 		}
 	});
