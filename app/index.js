@@ -37,25 +37,13 @@ var GAEFullstackGenerator = yeoman.generators.Base.extend({
 			filter: function( val ) { return val.toLowerCase(); }
 		},{
 			type: 'input',
-			name: 'gcloud_path',
-			message: 'Where is your Google Cloud SDK path?(please use absolute path)',
-			default: '${HOME}/.sdk_tools/google-cloud-sdk'
-		},{
-			type: 'confirm',
-			name: 'virtualenv',
-			message: 'Do you want to use virtualenv with your development project?',
-			default: true
-		}, {
-			type: 'input',
 			name: 'virtualenv_name',
 			message: "What's your virtualenv name?",
 			default: path.basename(process.cwd()),
-			when: function(props){ return props.virtualenv;}
 		}], function (props) {
 			this.app_id 				= props.app_id;
 			this.gcloud_path 			= props.gcloud_path;
 			this.filters['pyframework'] = props.PyFramework;
-			this.virtualenv  			= props.virtualenv;
 			this.virtualenv_name 		= props.virtualenv_name;
 			done();
 		}.bind(this));

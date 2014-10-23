@@ -1,6 +1,6 @@
 import os
 import site
-import sys <% if(virtualenv) { %>
+import sys
 if hasattr(sys, 'real_prefix'):
     site.addsitedir(os.path.join(os.path.dirname(__file__), 'lib'))
     gae_pth = '%s/lib/python2.7/site-packages/gae.pth' % os.environ.get('VIRTUAL_ENV')
@@ -21,7 +21,4 @@ You are not in a python virtual envionment
 Besure you have install virtualenvwrapper
 and run 'workon <%= virtualenv_name  %>'
             """
-<% } else { %>
-import app
-<% } %>
 
