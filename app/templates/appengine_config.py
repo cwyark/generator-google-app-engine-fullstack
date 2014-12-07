@@ -1,4 +1,4 @@
-"""`appengine_config` gets loaded when starting a new application instance."""
+"""appengine_config.py gets loaded when starting a new application instance."""
 import site
 import os.path
 # add `lib` subdirectory as a site packages directory, so our `main` module can load

@@ -8,17 +8,12 @@ var gruntfile = require('gruntfile-editor');
 
 
 var GAEFullstackGenerator = yeoman.generators.Base.extend({
-
   	initializing: function () {
     	this.pkg = require('../package.json');
-		this.filters = {};
   	},
 	
 	info: function() {
-		// Have Yeoman greet the user.
-		this.log(yosay(
-		  'Welcome to the GAE with Python Fullstack generator!'
-		));
+		this.log(yosay('Welcome to the GAE with Python Fullstack generator!'));
 	},
 
   	python_prompts: function () {
@@ -33,18 +28,10 @@ var GAEFullstackGenerator = yeoman.generators.Base.extend({
 			type: 'list',
 			name: 'PyFramework',
 			message: 'Which python framework do you want to use?',
-			choices:['Flask','Webapp2','Bottle'],
-			filter: function( val ) { return val.toLowerCase(); }
-		},{
-			type: 'input',
-			name: 'virtualenv_name',
-			message: "What's your virtualenv name?",
-			default: path.basename(process.cwd()),
+			choices:['flask','webapp2','bottle'],
 		}], function (props) {
 			this.app_id 				= props.app_id;
-			this.gcloud_path 			= props.gcloud_path;
-			this.filters['pyframework'] = props.PyFramework;
-			this.virtualenv_name 		= props.virtualenv_name;
+			this.PyFramework 			= props.PyFramework;
 			done();
 		}.bind(this));
   	},
@@ -59,13 +46,12 @@ var GAEFullstackGenerator = yeoman.generators.Base.extend({
 			default: false
 		}, {
 			type: 'list',
-			name: 'ui_framework',
+			name: 'UiFramework',
 			message: 'Which UI framework do you want to use?',
 			choices: ['bootstrap', 'Foundation', 'Semantic', 'None'],
-			filter: function( val ) { return val.toLowerCase(); }
 		}], function (props) {
-			this.filters['uiframework'] = props.ui_framework;
-			this.compass   				= props.compass;
+			this.UiFramework = props.UiFramework;
+			this.compass = props.compass;
 			done();
 		}.bind(this));
   	},
@@ -76,20 +62,14 @@ var GAEFullstackGenerator = yeoman.generators.Base.extend({
       this.dest.mkdir('lib');
 	  this.src.copy('appengine_config.py','appengine_config.py');
 	  this.src.copy('Gruntfile.js','Gruntfile.js');
-	  this.src.copy('pyweb/' + this.filters['pyframework'] + '_entry.py','app/__init__.py');
+	  this.src.copy('pyweb/' + this.PyFramework + '_entry.py','main.py');
 
 	  this.template('_app.yaml', 'app.yaml');
 	  /* pip's requirements config */
 	  this.template('_requirements.txt', 'requirements.txt');
-	  this.template('_main.py', 'main.py');
-      this.template('_package.json', 'package.json');
+	  // Because we use python as our backend framework, so we don't need package.json
 	  this.template('_bower.json', 'bower.json');
     },
-
-    projectfiles: function () {
-      this.src.copy('editorconfig', '.editorconfig');
-      this.src.copy('jshintrc', '.jshintrc');
-    }
   },
 
   end: function () {

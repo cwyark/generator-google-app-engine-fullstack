@@ -1,6 +1,13 @@
 {
-  "name": "package",
-  "version": "0.0.0",
-  "dependencies": {}
+	"name": "<%= app_id %>",
+ 	"version": "0.0.2",
+  	"dependencies": {},
+	"devDependencies": {
+		"grunt": "~0.4.4",
+		"grunt-shell": "~1.1.1"
+	},
+	"engines": {
+		"node": ">=0.10.0"
+  	}
 }
 

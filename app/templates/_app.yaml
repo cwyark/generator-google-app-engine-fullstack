@@ -6,10 +6,10 @@ api_version: 1
 
 libraries:
 - name: jinja2
-  version: latest<% if(filters['pyframework']=='Webapp2') { %>
+  version: latest<% if(PyFramework=='Webapp2') { %>
 - name: webapp2
   version: latest <% } %>
 
 handlers:
-- url: .*  # This regex directs all routes to main.app
-  script: main.app.app
+- url: /.*  # This regex directs all routes to main.app
+  script: main.app
