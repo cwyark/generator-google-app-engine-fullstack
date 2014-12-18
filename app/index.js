@@ -68,16 +68,16 @@ var GAEFullstackGenerator = yeoman.generators.Base.extend({
 	  this.src.copy('pyweb/' + this.PyFramework + '_entry.py','main.py');
 	  this.template('_app.yaml', 'app.yaml');
 	  /* pip's requirements config */
+
 	  this.template('_requirements.txt', 'requirements.txt');
-	  // Because we use python as our backend framework, so we don't need package.json
 	  this.template('_bower.json', 'static/bower.json');
-	  this.template('_package.json', 'static/package.json');
+	  this.template('_package.json', 'package.json');
     },
   },
 
   end: function () {
     this.installDependencies();
-	this.spawnCommand('pip install -r requirement.txt -t lib')
+	this.spawnCommand('pip', ['install', '-r', 'requirements.txt', '-t', 'lib'])
   }
 });
 
