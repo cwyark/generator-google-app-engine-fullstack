@@ -3,13 +3,15 @@
   	"version": "0.0.2",
 	"static_folder": "static",
 	"template_folder": "template",
+	"gae_host_ip": "127.0.0.1",
+	"gae_host_port": "8080",
   	"dependencies": {},
   	"devDependencies": {
 		"grunt": "~0.4.4",
 		"grunt-contrib-compass": "~1.0.1",
 		"grunt-contrib-watch": "~0.6.1",
-		"grunt-contrib-uglify": "~0.6.0"
-
+		"grunt-contrib-uglify": "~0.6.0",
+		"grunt-shell": "~1.1.1"
 	},
 	"engines": {
 		"node": ">=0.10.0"

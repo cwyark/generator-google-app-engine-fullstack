@@ -3,6 +3,12 @@
 module.exports = function (grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		shell: {
+			option: {
+				strerr:false,
+				command: 'dev_appserver.py --host <%= pkg.gae_host_ip %> --port <%= pkg.gae_host_port %> .'
+			}
+		},
 		compass: {
 			dist: {
 				options: {
@@ -18,6 +24,7 @@ module.exports = function (grunt) {
 			}
 		}
 	});
+	grunt.loadNpmTasks('grunt-shell');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
