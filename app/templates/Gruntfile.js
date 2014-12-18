@@ -22,11 +22,20 @@ module.exports = function (grunt) {
 				files: '**/*.{scss,sass}',
 				tasks: ['compass']
 			}
+		},
+		concurrent: {
+			target: {
+				tasks: ['shell','watch'],
+				options: {
+					logConcurrentOutput: true
+				}
+			}
 		}
 	});
 	grunt.loadNpmTasks('grunt-shell');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.registerTask('default', ['watch']);
+	grunt.loadNpmTasks('grunt-concurrent');
+	grunt.registerTask('default', ['concurrent:target']);
 };

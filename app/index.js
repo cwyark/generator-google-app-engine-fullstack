@@ -78,7 +78,6 @@ var GAEFullstackGenerator = yeoman.generators.Base.extend({
 
   end: function () {
     this.installDependencies();
-	this.spawnCommand('pip', ['install', '-r', 'requirements.txt', '-t', 'lib'])
   }
 });
 
