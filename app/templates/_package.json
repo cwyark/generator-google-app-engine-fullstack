@@ -4,7 +4,6 @@
   	"dependencies": {},
   	"devDependencies": {
 		"grunt": "~0.4.4",
-		"grunt-shell": "~1.1.1"
 	},
 	"engines": {
 		"node": ">=0.10.0"
