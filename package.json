@@ -33,5 +33,11 @@
   },
   "peerDependencies": {
     "yo": ">=1.0.0"
+  },
+  "gae_project" : {
+	  "template_folder": "templates",
+	  "static_folder": "static",
+	  "gae_app": "app",
+	  "gae_lib": "lib"
   }
 }

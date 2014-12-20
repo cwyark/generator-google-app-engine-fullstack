@@ -5,6 +5,7 @@
 	"template_folder": "template",
 	"gae_host_ip": "127.0.0.1",
 	"gae_host_port": "8080",
+	"compass": "<%= filter.compass %>",
   	"dependencies": {},
   	"devDependencies": {
 		"grunt": "~0.4.4",

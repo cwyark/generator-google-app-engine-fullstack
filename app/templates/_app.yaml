@@ -6,7 +6,7 @@ api_version: 1
 
 libraries:
 - name: jinja2
-  version: latest<% if(PyFramework=='Webapp2') { %>
+  version: latest<% if(filter.PyFramework=='Webapp2') { %>
 - name: webapp2
   version: latest <% } %>
 
