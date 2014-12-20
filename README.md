@@ -53,7 +53,7 @@ to activate gae server.
 Or You can only run ...
 
 ```bash
-grunt
+grunt server
 ```
 
 to execute the dev_appserver.py which is wrapped in Grunt tasks.

@@ -37,5 +37,5 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-concurrent');
-	grunt.registerTask('default', ['concurrent:target']);
+	grunt.registerTask('server', ['concurrent:target']);
 };
