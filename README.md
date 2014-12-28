@@ -37,26 +37,26 @@ yo google-app-engine-fullstack
 To initialize the gae server...
 
 ```bash
-grunt 
+grunt install
 ```
+
+This command will install the python libraries from the PyPi by using pip.
 
 ### How to run dev_appserver.py ?
 
-You can directly use
+For the original way, you can directly use
 
 ```
-dev_appserver.py ./ 
+dev_appserver.py .
 
 ```
-to activate gae server.
-
-Or You can only run ...
+Now you can activate gae server from grunt
 
 ```bash
 grunt server
 ```
 
-to execute the dev_appserver.py which is wrapped in Grunt tasks.
+The dev_appserver.py which is wrapped in Grunt tasks.
 
 
 ## License

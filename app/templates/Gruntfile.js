@@ -1,11 +1,15 @@
 'use strict';
 
 module.exports = function (grunt) {
+	var param = {};
+	param['host'] = grunt.option('host') || '127.0.0.1';
+	param['port'] = grunt.option('port') || '8080';
+	param['extra_argument'] = grunt.option('extra_argument') || ''
 	grunt.initConfig({
-		pkg: grunt.file.readJSON('package.json'),
+			pkg: grunt.file.readJSON('package.json'),
 		shell: {
 			app_server: {
-				command: 'dev_appserver.py --host <%= pkg.gae_host_ip %> --port <%= pkg.gae_host_port %> .',
+				command: 'dev_appserver.py --host ' + param['host'] + ' --port ' + param['port'] + param['extra_argument'] + ' .',
 				option: {
 					strerr:true,
 				}
