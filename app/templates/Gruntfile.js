@@ -4,9 +4,14 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		shell: {
-			option: {
-				strerr:false,
-				command: 'dev_appserver.py --host <%= pkg.gae_host_ip %> --port <%= pkg.gae_host_port %> .'
+			app_server: {
+				command: 'dev_appserver.py --host <%= pkg.gae_host_ip %> --port <%= pkg.gae_host_port %> .',
+				option: {
+					strerr:true,
+				}
+			},
+			gae_pip_install:{
+				command: 'pip install -r requirements.txt -t lib'
 			}
 		},
 		compass: {
@@ -25,7 +30,7 @@ module.exports = function (grunt) {
 		},
 		concurrent: {
 			target: {
-				tasks: ['shell','watch'],
+				tasks: ['shell:app_server','watch'],
 				options: {
 					logConcurrentOutput: true
 				}
@@ -38,4 +43,5 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-concurrent');
 	grunt.registerTask('server', ['concurrent:target']);
+	grunt.registerTask('install', ['shell:gae_pip_install']);
 };
