@@ -58,6 +58,13 @@ grunt server
 
 The dev_appserver.py which is wrapped in Grunt tasks.
 
+For Advance, you can.....
+
+```bash
+grunt server --host='0.0.0.0' --port='12345' --extra-argument='balabala'
+```
+
+--extra-argument is the dev_appserver.py's arguments
 
 ## License
 

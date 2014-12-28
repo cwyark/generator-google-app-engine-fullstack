@@ -9,7 +9,7 @@ module.exports = function (grunt) {
 			pkg: grunt.file.readJSON('package.json'),
 		shell: {
 			app_server: {
-				command: 'dev_appserver.py --host ' + param['host'] + ' --port ' + param['port'] + param['extra_argument'] + ' .',
+				command: 'dev_appserver.py --host ' + param['host'] + ' --port ' + param['port'] + param['extra-argument'] + ' .',
 				option: {
 					strerr:true,
 				}
