@@ -4,7 +4,7 @@ module.exports = function (grunt) {
 	var param = {};
 	param['host'] = grunt.option('host') || '127.0.0.1';
 	param['port'] = grunt.option('port') || '8080';
-	param['extra_argument'] = grunt.option('extra_argument') || ''
+	param['extra_argument'] = grunt.option('extra-argument') || ''
 	grunt.initConfig({
 			pkg: grunt.file.readJSON('package.json'),
 		shell: {
