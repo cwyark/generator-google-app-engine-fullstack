@@ -4,4 +4,3 @@ node_js:
 before_install:
   - currentfolder=${PWD##*/}
   - if [ "$currentfolder" != 'generator-google-app-engine-fullstack' ]; then cd .. && eval "mv $currentfolder generator-google-app-engine-fullstack" && cd generator-google-app-engine-fullstack; fi
-

@@ -2,13 +2,13 @@
 
 *version: v0.0.3*
 
->It's a [Yeoman](http://yeoman.io) generator to help you to rapidly build a Google App Engine based on Python Lang. 
+>It's a [Yeoman](http://yeoman.io) generator to help you to rapidly build a Google App Engine based on Python language. 
 
 ## Getting Started
 
 ### How to install Yeoman?
 
-First of all, please install [npm](https://npmjs.org), this tool is a Node Packaging tool. If you have installed NodeJS, there should have this tool in your PC.
+First of all, please install [npm](https://npmjs.org) whcih is a Node Packaging tool. And alsoyou have to install `Nodejs`.
 
 Then there only one step to install Yeoman.
 
@@ -18,7 +18,7 @@ npm install -g yo
 
 ### How to install generator-google-app-engine-fullstack?
 
-Currently, the only way to install generator-google-app-engine-fullstack is from github, run:
+So far, the only way to install generator-google-app-engine-fullstack is from github, run:
 
 ```bash
 git clone https://github.com/cwyark/generator-google-app-engine-fullstack.git 

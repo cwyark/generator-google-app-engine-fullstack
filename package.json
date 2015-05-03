@@ -1,14 +1,14 @@
 {
   "name": "generator-google-app-engine-fullstack",
-  "version": "0.0.2",
-  "description": "A Yeoman fullstack scaffold for Google App Engine with Python",
+  "version": "0.0.0",
+  "description": "Yeoman generator",
   "license": "MIT",
   "main": "app/index.js",
   "repository": "cwyark/generator-google-app-engine-fullstack",
   "author": {
-    "name": "Chester Tseng",
-    "email": "cwyark@gmail.com",
-    "url": "https://github.com/cwyark"
+    "name": "",
+    "email": "",
+    "url": ""
   },
   "engines": {
     "node": ">=0.10.0"
@@ -23,21 +23,14 @@
     "yeoman-generator"
   ],
   "dependencies": {
-    "yeoman-generator": "^0.17.0",
+    "yeoman-generator": "^0.18.0",
     "chalk": "^0.5.0",
     "yosay": "^0.3.0"
   },
   "devDependencies": {
-    "mocha": "*",
-    "gruntfile-editor": "^0.2.0"
+    "mocha": "*"
   },
   "peerDependencies": {
     "yo": ">=1.0.0"
-  },
-  "gae_project" : {
-	  "template_folder": "templates",
-	  "static_folder": "static",
-	  "gae_app": "app",
-	  "gae_lib": "lib"
   }
 }

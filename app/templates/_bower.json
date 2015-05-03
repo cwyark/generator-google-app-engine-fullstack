@@ -1,8 +1,6 @@
 {
-	"name": "<%= app_id %>",
- 	"version": "0.0.2",
-  	"dependencies": {},
-	"devDependencies": {
-	}
+  "name": "package",
+  "version": "0.0.0",
+  "dependencies": {}
 }
 
