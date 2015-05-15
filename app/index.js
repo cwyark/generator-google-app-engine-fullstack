@@ -2,6 +2,7 @@
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
+var path = require('path');
 
 module.exports = yeoman.generators.Base.extend({
   initializing: function () {
@@ -13,7 +14,7 @@ module.exports = yeoman.generators.Base.extend({
 
     // Have Yeoman greet the user.
     this.log(yosay(
-      'Welcome to the perfect' + chalk.red('GoogleAppEngineFullstack') + ' generator!'
+      'Welcome to the ' + chalk.red('pyGAE') + ' generator!'
     ));
 
     var prompts = [{
@@ -32,15 +33,30 @@ module.exports = yeoman.generators.Base.extend({
 
   writing: {
     app: function () {
-      this.fs.copy(
-        this.templatePath('_package.json'),
-        this.destinationPath('package.json')
-      );
-      this.fs.copy(
-        this.templatePath('_bower.json'),
-        this.destinationPath('bower.json')
-      );
+ 	  this.fs.copy(
+		this.templatePath('_app.yaml'),
+		this.destinationPath('app.yaml')
+	  );
     },
+
+	pythonapp: function () {
+	  var prefix = 'app';
+ 	  this.copy('__init__.py', path.join(prefix, '__init__.py'));
+    },
+
+	assets: function() {
+	  
+	  var prefix = 'assets';
+
+	  this.fs.copy(
+		this.templatePath('_package.json'),
+        this.destinationPath(path.join(prefix, 'package.json'))
+      );
+	  this.fs.copy(
+        this.templatePath('_bower.json'),
+        this.destinationPath(path.join(prefix, 'bower.json'))
+      );
+	},
 
     projectfiles: function () {
       this.fs.copy(
@@ -55,8 +71,8 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   install: function () {
-    this.installDependencies({
-      skipInstall: this.options['skip-install']
-    });
+	this.log(yosay(
+	  'Now ' + chalk.green('cd ./assets') + ' and run ' + chalk.green('npm install ; bower install')
+    ));
   }
 });

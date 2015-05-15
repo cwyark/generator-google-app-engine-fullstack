@@ -21,15 +21,19 @@
   ],
   "keywords": [
     "yeoman-generator",
-	"python",
-	"google app engine"
+    "python",
+    "google app engine"
   ],
   "dependencies": {
-    "yeoman-generator": "^0.18.0",
     "chalk": "^0.5.0",
+    "yeoman-generator": "^0.18.0",
     "yosay": "^0.3.0"
   },
   "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-jshint": "^1.10.0",
+    "gulp-watch": "^4.2.4",
+    "jshint-stylish": "^1.0.2",
     "mocha": "*"
   },
   "peerDependencies": {

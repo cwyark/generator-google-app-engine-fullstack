@@ -1,0 +1,29 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+libraries:
+- name: webapp2
+  version: "2.5.2"
+
+- name: jinja2
+  version: "2.6"
+
+handlers:
+- url: /robots.txt
+  static_files: app/frontend/robots.txt
+  upload: app/frontend/robots.txt
+
+- url: /humans.txt
+  static_files: app/frontend/humans.txt
+  upload: app/frontend/humans.txt
+
+- url: /stylesheets
+  static_dir: app/frontend/dist/stylesheets
+
+- url: /js
+  static_dir: app/frontend/dist/js
+
+- url: /.*
+  script: app.app
+  secure: always
