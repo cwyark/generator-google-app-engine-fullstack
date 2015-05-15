@@ -1,12 +1,12 @@
-# Generator-google-app-engine-fullstack
+# Generator-pygae #
 
 *version: v0.0.3*
 
 >It's a [Yeoman](http://yeoman.io) generator to help you to rapidly build a Google App Engine based on Python language. 
 
-## Getting Started
+## Getting Started ##
 
-### How to install Yeoman?
+### How to install Yeoman? ###
 
 First of all, please install [npm](https://npmjs.org) whcih is a Node Packaging tool. And alsoyou have to install `Nodejs`.
 
@@ -16,14 +16,14 @@ Then there only one step to install Yeoman.
 npm install -g yo
 ```
 
-### How to install generator-google-app-engine-fullstack?
+### How to install generator-pygae ###
 
-So far, the only way to install generator-google-app-engine-fullstack is from github, run:
+So far, the only way to install generator-pygae is from github, run:
 
 ```bash
-git clone https://github.com/cwyark/generator-google-app-engine-fullstack.git 
+git clone https://github.com/cwyark/generator-pygae.git 
 
-cd generator-google-app-engine-fullstack
+cd generator-pygae
 
 npm link
 ```
@@ -31,40 +31,24 @@ npm link
 Finally, initiate the generator:
 
 ```bash
-yo google-app-engine-fullstack
+yo google-pygae
 ```
 
-To initialize the gae server...
+### How to activate google app engine server ? ###
+
+You can first download and install the [_gcloud_](https://cloud.google.com/sdk/).
+
+Install the requirements for python environment.
 
 ```bash
-grunt install
+gcloud components update pkg-python app gae-python preview app-engine-python
 ```
 
-This command will install the python libraries from the PyPi by using pip.
-
-### How to run dev_appserver.py ?
-
-For the original way, you can directly use
-
-```
-dev_appserver.py .
-
-```
-Now you can activate gae server from grunt
+Then, run the server 
 
 ```bash
-grunt server
+gcloud preview app run app.yaml 
 ```
-
-The dev_appserver.py which is wrapped in Grunt tasks.
-
-For Advance, you can.....
-
-```bash
-grunt server --host='0.0.0.0' --port='12345' --extra-argument='balabala'
-```
-
---extra-argument is the dev_appserver.py's arguments
 
 ## License
 

@@ -1,14 +1,14 @@
 {
-  "name": "generator-google-app-engine-fullstack",
-  "version": "0.0.0",
-  "description": "Yeoman generator",
+  "name": "generator-pygae",
+  "version": "0.0.3",
+  "description": "A Yeoman generator for building Google App Engine for python",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": "cwyark/generator-google-app-engine-fullstack",
+  "repository": "cwyark/generator-pygae",
   "author": {
-    "name": "",
-    "email": "",
-    "url": ""
+    "name": "Cwyark",
+    "email": "cwyark@gmail.com",
+    "url": "http://cwyark.github.io"
   },
   "engines": {
     "node": ">=0.10.0"
@@ -20,7 +20,9 @@
     "app"
   ],
   "keywords": [
-    "yeoman-generator"
+    "yeoman-generator",
+	"python",
+	"google app engine"
   ],
   "dependencies": {
     "yeoman-generator": "^0.18.0",
