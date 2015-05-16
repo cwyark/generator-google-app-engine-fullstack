@@ -11,18 +11,18 @@ libraries:
 
 handlers:
 - url: /robots.txt
-  static_files: app/frontend/robots.txt
-  upload: app/frontend/robots.txt
+  static_files: assets/robots.txt
+  upload: assets/robots.txt
 
 - url: /humans.txt
-  static_files: app/frontend/humans.txt
-  upload: app/frontend/humans.txt
+  static_files: assets/humans.txt
+  upload: assets/humans.txt
 
 - url: /stylesheets
-  static_dir: app/frontend/dist/stylesheets
+  static_dir: assets/dist/stylesheets
 
 - url: /js
-  static_dir: app/frontend/dist/js
+  static_dir: assets/dist/js
 
 - url: /.*
   script: app.app
